@@ -3,6 +3,7 @@ import ReactDOM from "react-dom/client";
 import { Canvas } from "@react-three/fiber";
 import "./index.css";
 import { Experience } from "./Experience";
+import * as THREE from "three";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 const optionCamera = {
@@ -14,7 +15,15 @@ const optionCamera = {
 };
 root.render(
   <>
-    <Canvas orthographic camera={optionCamera}>
+    <Canvas
+      gl={{
+        antialias: true,
+        toneMapping: THREE.ACESFilmicToneMapping,
+        outputEncoding: THREE.sRGBEncoding,
+      }}
+      orthographic
+      camera={optionCamera}
+    >
       <Experience />
     </Canvas>
   </>
