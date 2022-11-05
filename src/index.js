@@ -4,6 +4,8 @@ import { Canvas } from "@react-three/fiber";
 import "./index.css";
 import { Experience } from "./Experience";
 import * as THREE from "three";
+import { StrictMode } from "react";
+import { Leva } from "leva";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 const optionCamera = {
@@ -14,7 +16,8 @@ const optionCamera = {
   position: [3, 2, 6],
 };
 root.render(
-  <>
+  <StrictMode>
+    <Leva />
     <Canvas
       gl={{
         antialias: true,
@@ -26,5 +29,5 @@ root.render(
     >
       <Experience />
     </Canvas>
-  </>
+  </StrictMode>
 );
