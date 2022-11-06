@@ -2,7 +2,7 @@ import { OrbitControls } from "@react-three/drei";
 import { Suspense } from "react";
 import { Perf } from "r3f-perf";
 import { Model } from "./Models/Model";
-import { Hamburger } from "./Models/Hamburger";
+import { Fox } from "./Models/Fox";
 import { Placeholder } from "./Models/Placeholder";
 
 export function Experience() {
@@ -31,7 +31,7 @@ export function Experience() {
       </mesh>
 
       <Suspense fallback={<Placeholder position-y={0.5} scale={[2, 3, 2]} />}>
-        <Hamburger scale={0.35} />
+        <Fox scale={0.02} position={[0, -1, 0]} />
       </Suspense>
     </>
   );
