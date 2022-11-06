@@ -16,18 +16,15 @@ const optionCamera = {
   position: [3, 2, 6],
 };
 root.render(
-  <StrictMode>
-    <Leva />
-    <Canvas
-      gl={{
-        antialias: true,
-        toneMapping: THREE.ACESFilmicToneMapping,
-        outputEncoding: THREE.sRGBEncoding,
-      }}
-      orthographic
-      camera={optionCamera}
-    >
-      <Experience />
-    </Canvas>
-  </StrictMode>
+  <Canvas
+    shadows
+    camera={{
+      fov: 45,
+      near: 0.1,
+      far: 200,
+      position: [-4, 3, 6],
+    }}
+  >
+    <Experience />
+  </Canvas>
 );
